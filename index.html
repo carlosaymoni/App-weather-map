@@ -9,9 +9,9 @@
     <title>Reloj</title>
 </head>
 
-<body onload="startTime()">
+<body onload="startTime(),clima()">
     <main class="main">
-        <h1 class="h1">Argentina</h1>
+        <h1 id="h1"></h1>
         <div class="date">
             <div id="fecha"></div>
             <div id="dia"></div>
@@ -23,7 +23,12 @@
             <span>:</span>
             <div class="segundos" id="sec"></div>
         </div>
+        <div id="box-clima">
+            <div id="temperatura"></div>
+            <div id="humedad"></div>
+        </div>
     </main>
+    <script src="index.js"></script>
     <script src="app.js"></script>
 </body>
 

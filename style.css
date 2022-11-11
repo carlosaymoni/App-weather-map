@@ -5,22 +5,23 @@
 }
 
 .main {
-    background-color: #252525;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
-    width: 100%;
+    width: 100%; 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
 }
 
-.h1 {
-    color: #ffffff;
+#h1 {
+    color: #09203f;
     margin-bottom: 20px;
 }
 
-.date {
+.date,
+#box-clima {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -28,25 +29,28 @@
 }
 
 #fecha,
-#dia {
+#dia,
+#temperatura,
+#humedad {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #272727;
+    background-color: #ECE9E6;
     width: 180px;
     height: 100px;
     border-radius: 15px;
     margin: 10px auto;
-    color: #e2e2e2;
+    color: #09203f;
     font-size: 1.5rem;
     box-shadow: 0 0 5px #000;
+    text-align: center;
 }
 
 #container {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #272727;
+    background-color: #ECE9E6;
     width: 400px;
     height: 200px;
     border-radius: 15px;
@@ -57,21 +61,21 @@
 .minutos {
     width: 100px;
     height: 100px;
-    background-color: rgb(59, 59, 59);
+    background-color: #d3d3d3;
     margin: 5px;
     border-radius: 10px;
-    color: #e2e2e2;
+    color: #09203f;
     font-size: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 8px black;
+    box-shadow: 0 0 5px black;
 }
 
 .segundos {
     width: 100px;
     height: 100px;
-    background-color: rgb(107, 107, 107);
+    background-color: #236ccc;
     margin: 5px;
     border-radius: 10px;
     color: #e2e2e2;
@@ -84,5 +88,6 @@
 
 span {
     font-size: 2rem;
-    color: #ffffff;
+    color: #09203f;
 }
+

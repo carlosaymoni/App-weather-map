@@ -2,52 +2,39 @@
 
 
 function startTime() {
-    let today = new Date();
-    let fecha = today.toLocaleDateString();
-    let dia = today.getDay()
-    let hr = today.getHours();
-    let min = today.getMinutes();
-    let sec = today.getSeconds();
+  let today = new Date();
+  let date = today.toLocaleDateString();
+  let dia = today.getDay()
+  let hr = today.getHours();
+  let min = today.getMinutes();
 
-    // cambiamos la sombra del contenedor segun los segundos
+  // Agregar 0 en los numeros menores a 10
 
-    if (sec % 2 === 0) {
-        document.getElementById('container').style.boxShadow = "0 0 10px #000";
-    } else {
-        document.getElementById('container').style.boxShadow = "0 0 5px #000";
-    }
+  hr = checkTime(hr);
+  min = checkTime(min);
 
-    // Agregar 0 en los numeros menores a 10
+  // Obtenemos el nombre del dia de la semana
 
-    hr = checkTime(hr);
-    min = checkTime(min);
-    sec = checkTime(sec);
+  const nameDays = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+  let day = nameDays[dia];
 
-    // Obtenemos el nombre del dia de la semana
+  // Mostramos los datos
 
-    const nameDays = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
-    let day = nameDays[dia];
+  document.getElementById("hr").innerHTML = `${hr}:${min}`;
+  document.getElementById("date").innerHTML = date;
+  document.getElementById("day").innerHTML = day;
 
-    // Mostramos los datos
-
-    document.getElementById("hr").innerHTML = hr;
-    document.getElementById("min").innerHTML = min;
-    document.getElementById("sec").innerHTML = sec;
-    document.getElementById("fecha").innerHTML = fecha;
-    document.getElementById("dia").innerHTML = day;
-
-    let time = setTimeout(function () {
-        startTime()
-    }, 500);
+  let time = setTimeout(function () {
+    startTime()
+  }, 500);
 
 }
 
 // funcion para agregar el 0 en los numeros < 10
 
 function checkTime(i) {
-    if (i < 10) {
-        i = "0" + i;
-    }
-    return i;
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
 }
-

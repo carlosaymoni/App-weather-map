@@ -2,34 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable =no">
-    <link rel="stylesheet" href="style.css">
-    <title>Reloj</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable =no">
+  <link rel="stylesheet" href="style.css">
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/4f23b2941c.js" crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="/images/sol.png" type="image/x-icon">
+  <title>App Open Weather Map</title>
 </head>
 
-<body onload="startTime(),clima()">
-    <main class="main">
+<body onload="startTime(),climate()">
+  <main class="main">
+    <div class="encabezado">
+      <div class="ubication">
         <h1 id="h1"></h1>
-        <div class="date">
-            <div id="fecha"></div>
-            <div id="dia"></div>
-        </div>
-        <div id="container">
-            <div class="horas" id="hr"></div>
-            <span>:</span>
-            <div class="minutos" id="min"></div>
-            <span>:</span>
-            <div class="segundos" id="sec"></div>
-        </div>
-        <div id="box-clima">
-            <div id="temperatura"></div>
-            <div id="humedad"></div>
-        </div>
-    </main>
-    <script src="index.js"></script>
-    <script src="app.js"></script>
+        <h3 id="city"></h3>
+      </div>
+      <div class="fecha">
+        <div id="day"></div>
+        <div id="date"></div>
+        <div class="horas" id="hr"></div>
+      </div>
+    </div>
+    <div id="box-clima">
+      <div>
+        <i class="fa-solid fa-temperature-three-quarters"> Temperatura</i>
+        <div class="card-clima" id="temp"></div>
+      </div>
+      <div>
+        <i class="fa-solid fa-sparkles"> Sensacion</i>
+        <div class="card-clima" id="feels_like"></div>
+      </div>
+      <div>
+        <i class="fa-solid fa-droplet-degree"> Humedad</i>
+        <div class="card-clima" id="humidity"></div>
+      </div>
+      <div>
+        <i class="fa-solid fa-temperature-high"> Maxima</i>
+        <div class="card-clima" id="temp_max"></div>
+      </div>
+      <div>
+        <i class="fa-solid fa-temperature-low"> Minina</i>
+        <div class="card-clima" id="temp_min"></div>
+      </div>
+      <div>
+        <i class="fa-solid fa-wind"> Viento</i>
+        <div class="card-clima" id="wind"></div>
+      </div>
+    </div>
+  </main>
+  <script src="index.js"></script>
+  <script src="app.js"></script>
 </body>
 
 </html>

@@ -11,19 +11,23 @@ const dataClimate = position => {
     latitude,
     longitude
   } = position.coords;
-  fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${climateKey}`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${climateKey}&lang=es`)
     .then(response => response.json())
     .then(function (data) {
       console.log(data);
       let country = data.sys.country;
       let city = data.name;
-      let temp = data.main.temp;
-      let feel = data.main.feels_like;
+      let temp = Math.round(data.main.temp);
+      let feel = Math.round(data.main.feels_like);
       let humidity = data.main.humidity;
-      let max = data.main.temp_max;
-      let min = data.main.temp_min;
+      let max = Math.round(data.main.temp_max);
+      let min = Math.round(data.main.temp_min);
       let wind = data.wind.speed;
+      let description = data.weather[0].description;
+      
+        
 
+      document.getElementById('description').textContent = `"${description.toUpperCase()}"`;
       document.getElementById('h1').textContent = `${country}`;
       document.getElementById('city').textContent = `${city}`;
       document.getElementById('temp').textContent = `${temp} °C`;
